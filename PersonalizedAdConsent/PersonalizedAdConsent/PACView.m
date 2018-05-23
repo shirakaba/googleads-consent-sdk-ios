@@ -184,7 +184,7 @@ PACQueryParametersFromURL(NSURL *_Nonnull URL) {
 /// Loads the consent form HTML into the web view.
 - (void)loadWebView {
   NSURL *bundleURL =
-      [[NSBundle mainBundle] URLForResource:@"PersonalizedAdConsent" withExtension:@"bundle"];
+      [[NSBundle bundleForClass:[self class]] URLForResource:@"PersonalizedAdConsent" withExtension:@"bundle"];
   NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
   NSURL *URL = [bundle URLForResource:@"consentform" withExtension:@"html"];
   NSURLRequest *URLRequest = [[NSURLRequest alloc] initWithURL:URL];
